@@ -5,6 +5,7 @@ import android.os.Bundle;
 import org.parceler.Parcels;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import vn.nms.hui.app.Constant;
 import vn.nms.hui.app.R;
 import vn.nms.hui.app.base.BaseActivity;
@@ -24,9 +25,14 @@ public class GalleryPreviewActivity extends BaseActivity {
         }
         if (gallery == null) {
             finish();
-        }else{
+        } else {
             loadGallery();
         }
+    }
+
+    @OnClick(R.id.imgBack)
+    public void onBack() {
+        finish();
     }
 
     private void loadGallery() {

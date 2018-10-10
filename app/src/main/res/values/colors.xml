@@ -9,4 +9,5 @@
     <color name="blue">#397AF2</color>
     <color name="red">#FF3638</color>
     <color name="green">#49A37C</color>
+    <color name="t_black">#40000000</color>
 </resources>
