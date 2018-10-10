@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">45dp</dimen>
+    <dimen name="padding8">8dp</dimen>
+    <dimen name="padding16">16dp</dimen>
+    <dimen name="padding32">32dp</dimen>
+    <dimen name="photos_spacing">3dp</dimen>
+
+</resources>
