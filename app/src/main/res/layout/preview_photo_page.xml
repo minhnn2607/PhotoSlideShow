@@ -18,7 +18,7 @@
         android:alpha="0.6"
         android:background="@android:color/black" />
 
-    <vn.nms.hui.app.ui.widget.SquareImageView
+    <vn.nms.photo.app.ui.widget.SquareImageView
         android:id="@+id/imgView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <vn.nms.hui.app.ui.widget.ImageViewMenu
+    <vn.nms.photo.app.ui.widget.ImageViewMenu
         android:id="@+id/imgBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

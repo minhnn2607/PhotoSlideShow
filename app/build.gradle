@@ -34,12 +34,13 @@ android {
     }
 
     defaultConfig {
-        applicationId "vn.nms.hui.app"
+        applicationId "vn.nms.photo.app"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 10000
         versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     productFlavors {
@@ -134,6 +135,9 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
     implementation "android.arch.persistence.room:rxjava2:$room_version"
 
-    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
-    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation "jp.wasabeef:picasso-transformations:$picassoTransformVersion"
+    implementation "com.github.chrisbanes:PhotoView:$photoViewVersion"
+    implementation "com.android.support:multidex:$multidexVersion"
+    implementation "com.google.firebase:firebase-ads:$adMobVersion"
 }
+

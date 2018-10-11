@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".ui.home.HomeActivity">
 
-    <vn.nms.hui.app.ui.widget.HeaderView
+    <vn.nms.photo.app.ui.widget.HeaderView
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,14 +31,60 @@
         android:layout_height="match_parent"
         android:layout_below="@id/searchView" />
 
+    <LinearLayout
+        android:id="@+id/llEmpty"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You don't have any gallery."/>
+
+        <TextView
+            android:id="@+id/tvAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREATE NEW"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnAddEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            app:backgroundTint="@color/green"
+            android:src="@drawable/ic_add_gallery"
+            app:fabSize="normal" />
+
+    </LinearLayout>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        app:backgroundTint="@color/green"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add_gallery"
+        android:visibility="visible"
         app:fabSize="normal" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

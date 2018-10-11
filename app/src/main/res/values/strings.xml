@@ -27,5 +27,8 @@
     <string name="error_unknown">An error has occurred, please try again later.</string>
     <string name="home">Home</string>
     <string name="home_title">Photo SlideShow</string>
+    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+
 
 </resources>

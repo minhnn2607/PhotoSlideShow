@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".ui.gallery.editor.EditorGalleryActivity">
 
-    <vn.nms.hui.app.ui.widget.HeaderView
+    <vn.nms.photo.app.ui.widget.HeaderView
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             android:id="@+id/btnAddPhoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/green"
             android:drawableStart="@drawable/ic_album"
             android:drawablePadding="10dp"
             android:gravity="center|start"
