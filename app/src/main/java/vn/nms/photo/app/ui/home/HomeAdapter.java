@@ -59,15 +59,6 @@ public class HomeAdapter extends BaseAdapter<GalleryModel> implements Filterable
     @Override
     public void remove(int position) {
         GalleryModel item = getItemAtPosition(position);
-        if (item != null) {
-            int removeId = item.getId();
-            for (GalleryModel gallery : getData()) {
-                if (gallery.getId() == removeId) {
-                    getData().remove(gallery);
-                    break;
-                }
-            }
-        }
         filterList.remove(position);
         notifyDataSetChanged();
     }
