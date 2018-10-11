@@ -14,7 +14,7 @@ import vn.nms.hui.app.data.entity.GalleryModel;
 @Dao
 public interface GalleryDao {
 
-    @Query("SELECT * FROM GalleryModel")
+    @Query("SELECT * FROM GalleryModel ORDER BY createdDate DESC")
     Flowable<List<GalleryModel>> getGallery();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

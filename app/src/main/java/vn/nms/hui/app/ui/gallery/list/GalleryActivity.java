@@ -1,4 +1,4 @@
-package vn.nms.hui.app.ui.gallery;
+package vn.nms.hui.app.ui.gallery.list;
 
 import android.Manifest;
 import android.annotation.SuppressLint;

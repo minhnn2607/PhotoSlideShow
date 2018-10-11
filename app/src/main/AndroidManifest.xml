@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.gallery.GalleryActivity"
+            android:name=".ui.gallery.list.GalleryActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
@@ -34,10 +34,12 @@
             android:value="ff7f22c9877c7aa3da3936fb392f3340c31481be" />
 
         <activity android:name=".ui.home.HomeActivity" />
-
-        <activity android:name=".ui.gallery.AddGalleryActivity" />
+        <activity android:name=".ui.gallery.editor.EditorGalleryActivity" />
         <activity
-            android:name=".ui.gallery.GalleryPreviewActivity"
+            android:name=".ui.gallery.preview.GalleryPreviewActivity"
+            android:theme="@style/FullScreen" />
+        <activity
+            android:name=".ui.gallery.preview.SinglePhotoActivity"
             android:theme="@style/FullScreen" />
     </application>
 

@@ -1,4 +1,4 @@
-package vn.nms.hui.app.ui.gallery;
+package vn.nms.hui.app.ui.gallery.editor;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -22,9 +22,11 @@ import vn.nms.hui.app.base.BaseActivity;
 import vn.nms.hui.app.base.BaseApp;
 import vn.nms.hui.app.data.entity.GalleryModel;
 import vn.nms.hui.app.services.local.AppDataBase;
+import vn.nms.hui.app.ui.gallery.list.GalleryActivity;
+import vn.nms.hui.app.ui.gallery.list.GalleryAdapter;
 import vn.nms.hui.app.ui.widget.ItemDecorationAlbumColumns;
 
-public class AddGalleryActivity extends BaseActivity {
+public class EditorGalleryActivity extends BaseActivity {
     @BindView(R.id.recycleView)
     RecyclerView recyclerView;
     @BindView(R.id.etTitle)
@@ -37,7 +39,7 @@ public class AddGalleryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_gallery);
+        setContentView(R.layout.activity_editor_gallery);
         initHeader();
         unbinder = ButterKnife.bind(this);
         mAdapter = new GalleryAdapter();
@@ -85,6 +87,7 @@ public class AddGalleryActivity extends BaseActivity {
             GalleryModel gallery = new GalleryModel();
             if (editGallery != null) {
                 gallery.setId(editGallery.getId());
+                gallery.setCreatedDate(editGallery.getCreatedDate());
                 gallery.setUpdatedDate(System.currentTimeMillis());
             } else {
                 gallery.setCreatedDate(System.currentTimeMillis());

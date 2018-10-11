@@ -2,10 +2,15 @@ package vn.nms.hui.app.ui.home;
 
 import android.support.annotation.NonNull;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -16,12 +21,60 @@ import vn.nms.hui.app.base.BaseViewHolder;
 import vn.nms.hui.app.data.entity.GalleryModel;
 import vn.nms.hui.app.utils.DateTimeUtils;
 
-public class HomeAdapter extends BaseAdapter<GalleryModel> {
+public class HomeAdapter extends BaseAdapter<GalleryModel> implements Filterable {
+    private List<GalleryModel> filterList;
 
     @NonNull
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new HomeVH(parent, R.layout.slideshow_item);
+    }
+
+    @Override
+    public int getItemCount() {
+        return filterList == null || filterList.isEmpty() ? 0 : filterList.size();
+    }
+
+    @Override
+    public void addAll(List<GalleryModel> items) {
+        getData().addAll(items);
+        this.filterList = items;
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public GalleryModel getItemAtPosition(int position) {
+        return filterList == null
+                || position < 0
+                || filterList.size() == 0
+                || filterList.size() < position
+                ? null : filterList.get(position);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
+        holder.onBind(filterList.get(position));
+    }
+
+    @Override
+    public void remove(int position) {
+        GalleryModel item = getItemAtPosition(position);
+        if (item != null) {
+            int removeId = item.getId();
+            for (GalleryModel gallery : getData()) {
+                if (gallery.getId() == removeId) {
+                    getData().remove(gallery);
+                    break;
+                }
+            }
+        }
+        filterList.remove(position);
+        notifyDataSetChanged();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return 0;
     }
 
     public class HomeVH extends BaseViewHolder<GalleryModel> {
@@ -86,13 +139,46 @@ public class HomeAdapter extends BaseAdapter<GalleryModel> {
                 tvDate.setText(DateTimeUtils.getDateFromTime(galleryModel.getCreatedDate()));
                 if (galleryModel.getPhotos() != null && galleryModel.getPhotos().size() > 0) {
                     Picasso.get().load("file://" + galleryModel.getPhotos().get(0))
-                            .fit().noFade().into(imgView);
+                            .fit().centerCrop().into(imgView);
                 } else {
                     imgView.setImageResource(R.drawable.ic_photo_ph);
                 }
             }
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if (charString.isEmpty()) {
+                    filterList = getData();
+                } else {
+                    List<GalleryModel> filter = new ArrayList<>();
+                    for (GalleryModel row : getData()) {
+                        if (row.getTitle().toLowerCase().contains(charString.toLowerCase())
+                                || row.getDescription().contains(charSequence)) {
+                            filter.add(row);
+                        }
+                    }
+                    filterList = filter;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filterList;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                filterList = (ArrayList<GalleryModel>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
+
 
     private HomeListener listener;
 

@@ -113,7 +113,7 @@ public class HeaderView extends FrameLayout {
 
 
     public void setTitle(String title) {
-        if (TextUtils.isEmpty(title)) {
+        if (title != null) {
             tvToolbarTitle.setText(title);
         }
     }

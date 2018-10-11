@@ -6,7 +6,6 @@ import android.os.Handler;
 import vn.nms.hui.app.ui.home.HomeActivity;
 import vn.nms.hui.app.R;
 import vn.nms.hui.app.base.BaseActivity;
-import vn.nms.hui.app.ui.gallery.GalleryActivity;
 
 public class SplashActivity extends BaseActivity {
 

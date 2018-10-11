@@ -11,24 +11,34 @@
         android:id="@+id/headerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:hv_leftImage="@drawable/ic_back"
-        app:hv_title="Photo SlideShow"
-        app:hv_titleOnly="true" />
+        app:hv_titleOnly="true"
+        app:hv_title="@string/home_title" />
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@android:color/transparent"
+        android:iconifiedByDefault="false"
+        android:textColorHint="@android:color/white"
+        app:queryHint="Search Here"
+        android:visibility="visible"
+        android:theme="@style/SearchViewTheme" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_below="@id/headerView"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchView" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:src="@drawable/ic_add_gallery"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        app:fabSize="normal"
-        android:layout_margin="16dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_gallery"
+        app:fabSize="normal" />
 </RelativeLayout>

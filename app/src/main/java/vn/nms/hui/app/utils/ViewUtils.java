@@ -11,4 +11,5 @@ public class ViewUtils {
         float px = dp * ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return (int)px;
     }
+
 }

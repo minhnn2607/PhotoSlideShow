@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.gallery.AddGalleryActivity">
+    tools:context=".ui.gallery.editor.EditorGalleryActivity">
 
     <vn.nms.hui.app.ui.widget.HeaderView
         android:id="@+id/headerView"

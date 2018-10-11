@@ -133,4 +133,7 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
     implementation "android.arch.persistence.room:rxjava2:$room_version"
+
+    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
 }

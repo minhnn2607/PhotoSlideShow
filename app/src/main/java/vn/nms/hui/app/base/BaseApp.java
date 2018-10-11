@@ -5,13 +5,14 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.crashlytics.android.Crashlytics;
 import com.google.gson.Gson;
 
+import io.fabric.sdk.android.Fabric;
 import vn.nms.hui.app.BuildConfig;
 import vn.nms.hui.app.Constant;
 import vn.nms.hui.app.services.local.SharedPrefs;
 import com.squareup.leakcanary.LeakCanary;
-import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
 
@@ -50,7 +51,7 @@ public class BaseApp extends Application implements Application.ActivityLifecycl
             Timber.plant(new Timber.DebugTree());
             LeakCanary.install(this);
         } else {
-//            Fabric.with(this, new Crashlytics());
+            Fabric.with(this, new Crashlytics());
         }
 
         if (SharedPrefs.getInstance().get(Constant.PREF_TIME_INSTALL, Long.class) == 0) {

@@ -71,4 +71,9 @@ public class GalleryModel {
     public void setUpdatedDate(long updatedDate) {
         this.updatedDate = updatedDate;
     }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }

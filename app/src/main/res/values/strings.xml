@@ -26,5 +26,6 @@
     <string name="error_timeout_connect">Cannot connect to server. Please check your internet connection.</string>
     <string name="error_unknown">An error has occurred, please try again later.</string>
     <string name="home">Home</string>
+    <string name="home_title">Photo SlideShow</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package vn.nms.hui.app.ui.gallery;
+package vn.nms.hui.app.ui.gallery.preview;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +15,7 @@ public class PreviewFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_preview, container, false);
+        View view = inflater.inflate(R.layout.preview_photo_page, container, false);
         unbinder = ButterKnife.bind(this, view);
         return view;
     }

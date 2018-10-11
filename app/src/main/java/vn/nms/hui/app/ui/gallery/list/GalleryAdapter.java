@@ -1,4 +1,4 @@
-package vn.nms.hui.app.ui.gallery;
+package vn.nms.hui.app.ui.gallery.list;
 
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -51,7 +51,7 @@ public class GalleryAdapter extends BaseAdapter<String> {
 
         @Override
         public void onBind(String s) {
-            Picasso.get().load(new File(s)).centerCrop().noFade().fit().into(imageView);
+            Picasso.get().load(new File(s)).centerCrop().fit().into(imageView);
             int position = getAdapterPosition();
             if (selectedList.contains(position)) {
                 imgSelected.setVisibility(View.VISIBLE);
@@ -64,7 +64,7 @@ public class GalleryAdapter extends BaseAdapter<String> {
 
         @OnClick(R.id.imageView)
         public void selectPhoto() {
-            if(!isLock) {
+            if (!isLock) {
                 int position = getAdapterPosition();
                 if (position != -1) {
                     if (selectedList.contains(position)) {
@@ -72,7 +72,7 @@ public class GalleryAdapter extends BaseAdapter<String> {
                     } else {
                         selectedList.add(position);
                     }
-                    notifyItemChanged(position);
+                    notifyDataSetChanged();
                 }
             }
         }
