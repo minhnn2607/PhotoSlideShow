@@ -43,13 +43,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You don't have any gallery."/>
+            android:text="@string/gallery_empty"/>
 
         <TextView
             android:id="@+id/tvAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CREATE NEW"
+            android:text="@string/create_new"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"/>
 

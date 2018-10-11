@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:hv_leftImage="@drawable/ic_back"
-        app:hv_rightText="Save"
+        app:hv_rightText="@string/save"
         app:hv_title="Create SlideShow Photo" />
 
     <LinearLayout
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            android:hint="Description"
+            android:hint="@string/description"
             android:maxLines="5" />
     </LinearLayout>
 
@@ -63,7 +63,7 @@
             android:paddingTop="10dp"
             android:paddingEnd="30dp"
             android:paddingBottom="10dp"
-            android:text="Add Photo"
+            android:text="@string/add_photo"
             android:textColor="@android:color/white" />
     </LinearLayout>
 

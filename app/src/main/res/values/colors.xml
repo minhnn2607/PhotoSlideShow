@@ -7,8 +7,6 @@
     <color name="c_line">#F8F8F8</color>
     <color name="gray">#B3B3B3</color>
     <color name="light_gray">#F4F3F4</color>
-    <color name="blue">#397AF2</color>
     <color name="red">#FF3638</color>
     <color name="green">#60C0AD</color>
-    <color name="t_black">#40000000</color>
 </resources>

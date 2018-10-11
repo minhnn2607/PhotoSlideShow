@@ -98,7 +98,7 @@
             android:gravity="center"
             android:padding="10dp"
             android:background="@drawable/rect_red_bg"
-            android:text="Delete"
+            android:text="@string/delete"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -108,7 +108,7 @@
             android:background="@drawable/rect_green_bg"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Edit"
+            android:text="@string/edit"
             android:textColor="@android:color/white" />
     </LinearLayout>
 

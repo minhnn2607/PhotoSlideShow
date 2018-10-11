@@ -28,7 +28,12 @@
     <string name="home">Home</string>
     <string name="home_title">Photo SlideShow</string>
     <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-
+    <string name="description">Description</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="gallery_empty">You don\'t have any gallery.</string>
+    <string name="create_new">CREATE NEW</string>
+    <string name="photo_slideshow">Photo SlideShow</string>
+    <string name="edit">Edit</string>
 
 
 </resources>

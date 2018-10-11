@@ -53,6 +53,7 @@ public class GalleryPresenter extends BasePresenter<GalleryView> {
             PathOfImage = cursor.getString(column_index_data);
             listOfAllImages.add(PathOfImage);
         }
+        cursor.close();
         return listOfAllImages;
     }
 }
