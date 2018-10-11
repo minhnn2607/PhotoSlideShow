@@ -22,6 +22,7 @@ public class Constant {
     public static final int ADD_PHOTO_REQUEST_CODE = 1002;
 
     public static final int DELAY_REFRESH = 500;
+    public static final int CENTER_INDEX = 500;
 
     @StringDef({Gender.MALE, Gender.FEMALE})
     @Retention(RetentionPolicy.SOURCE)

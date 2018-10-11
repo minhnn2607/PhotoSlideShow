@@ -18,7 +18,7 @@ import vn.nms.photo.app.base.BaseActivity;
 import vn.nms.photo.app.data.entity.GalleryModel;
 import vn.nms.photo.app.utils.DateTimeUtils;
 
-public class GalleryPreviewActivity extends BaseActivity implements PreviewAdapter.PreViewListener {
+public class GalleryPreviewActivity extends BaseActivity {
     GalleryModel gallery;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
@@ -64,18 +64,11 @@ public class GalleryPreviewActivity extends BaseActivity implements PreviewAdapt
         tvTime.setPaintFlags(tvTime.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         tvDescription.setTypeface(tvDescription.getTypeface(), Typeface.ITALIC);
         if (gallery.getPhotos() != null) {
-            mAdapter = new PreviewAdapter(this, gallery.getPhotos());
-            mAdapter.setListener(this);
+            mAdapter = new PreviewAdapter(getSupportFragmentManager(), gallery.getPhotos());
             viewPager.setAdapter(mAdapter);
-            viewPager.setOffscreenPageLimit(5);
+            viewPager.setOffscreenPageLimit(3);
+            viewPager.setCurrentItem(gallery.getPhotos().size() * Constant.CENTER_INDEX);
         }
     }
 
-    @Override
-    public void onPreviewPhoto() {
-        Intent i = new Intent(this, SinglePhotoActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        i.putExtra(Constant.EXTRA_DATA, gallery.getPhotos().get(viewPager.getCurrentItem()));
-        startActivity(i);
-    }
 }
